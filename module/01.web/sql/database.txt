@@ -1,0 +1,2 @@
+create database order_info;		#Êı¾İ¿â
+use order_info;

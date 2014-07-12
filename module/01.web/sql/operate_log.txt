@@ -1,0 +1,9 @@
+create table operate_log( #操作日志表
+	id int auto_increment primary key comment '主键 自增',
+	user_name varchar(30) not null comment '姓名 不为空',
+	type int not null comment '操作类型 1:获取登陆短信 2:登陆 3:退出 4:新建用户 5:删除用户 6:修改用户 7:新建信息 8:删除信息 9:修改信息 10:导出信息 不为空',
+	content varchar(500) not null comment '内容 不为空',
+	date char(8) not null comment '日期 不为空',
+	time char(8) not null comment '时间 不为空',
+	ip varchar(100) not null comment 'ip 不为空'
+);

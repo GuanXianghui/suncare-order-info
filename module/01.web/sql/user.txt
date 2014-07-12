@@ -1,0 +1,10 @@
+create table user( #用户表
+	id int auto_increment primary key comment '主键 自增',
+	name varchar(30) unique not null comment '姓名 不为空',
+	password varchar(32) not null comment '密码 md5签名 不为空',
+	phone varchar(11) unique not null comment '手机号码 不为空',
+	validate_code varchar(4) comment '验证码 可为空'
+);
+
+#初始化sql
+insert into user(id, name, password, phone, validate_code) values (null, '关向辉', '6f2099461325b5098fd873654329c5a9', '13764603603', '');
