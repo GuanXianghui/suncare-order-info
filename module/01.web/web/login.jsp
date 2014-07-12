@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>申成-文件系统</title>
+    <title>申成-订单信息系统</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen" />
@@ -19,8 +19,8 @@
 <body id="login" onkeypress="keyPress(event)">
 <div id="login-wrapper" class="png_bg">
     <div id="login-top">
-        <h1>申成-文件系统</h1>
-        <img id="logo" src="images/suncare-files-logo.png" alt="申成-文件系统" />
+        <h1>申成-订单信息系统</h1>
+        <img id="logo" src="images/suncare-files-logo.png" alt="申成-订单信息系统" />
     </div>
     <div id="login-content">
         <form>

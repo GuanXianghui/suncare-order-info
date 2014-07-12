@@ -31,7 +31,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-    <title>申成-文件系统</title>
+    <title>申成-订单信息系统</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen"/>
@@ -62,7 +62,7 @@
 <div id="body-wrapper">
 <div id="sidebar">
     <div id="sidebar-wrapper">
-        <h1 id="sidebar-title"><a href="#">申成-文件系统</a></h1>
+        <h1 id="sidebar-title"><a href="#">申成-订单信息系统</a></h1>
         <img id="logo" src="images/suncare-files-logo.png" alt="Simpla Admin logo"/>
 
         <div id="profile-links"> Hello, [<%=user.getName()%>], <a href="http://www.suncarechina.com" target="_blank">申成</a>欢迎您！<br/>
