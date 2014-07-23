@@ -56,7 +56,7 @@ public class OrderInfoDao {
             sql += " AND resv LIKE '%" + resv + "%'";
         }
         sql += " AND state=" + OrderInfoInterface.STATE_NORMAL;
-        sql += " ORDER BY id LIMIT " + ((pageNum-1) * pageSize) + "," + pageSize;
+        sql += " ORDER BY date,time LIMIT " + ((pageNum-1) * pageSize) + "," + pageSize;
         Connection c = DB.getConn();
         Statement stmt = DB.createStatement(c);
         ResultSet rs = DB.executeQuery(c, stmt, sql);
@@ -133,6 +133,51 @@ public class OrderInfoDao {
                 count = rs.getInt("count_num");
             }
             return count;
+        } finally {
+            DB.close(rs);
+            DB.close(stmt);
+            DB.close(c);
+        }
+    }
+    /**
+     * 查询某月的订单信息
+     *
+     * @param year
+     * @param month
+     * @return
+     * @throws Exception
+     */
+    public static List<OrderInfo> queryOrderInfoByYearAndMonth(String year, String month) throws Exception {
+        //订单信息集合
+        List<OrderInfo> list = new ArrayList<OrderInfo>();
+        //sql语句
+        String sql = "SELECT id,name,phone,type,date,time,resv,state,create_date,create_time,create_ip" +
+                " FROM order_info WHERE date LIKE '" + year + month + "%' AND state=" +
+                OrderInfoInterface.STATE_NORMAL + " ORDER BY date,time";
+        Connection c = DB.getConn();
+        Statement stmt = DB.createStatement(c);
+        ResultSet rs = DB.executeQuery(c, stmt, sql);
+        try {
+            if (rs == null) {
+                throw new RuntimeException("数据库操作出错，请重试！");
+            }
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String phone = rs.getString("phone");
+                int type = rs.getInt("type");
+                String date = rs.getString("date");
+                String time = rs.getString("time");
+                String resv = rs.getString("resv");
+                int state = rs.getInt("state");
+                String createDate = rs.getString("create_date");
+                String createTime = rs.getString("create_time");
+                String createIp = rs.getString("create_ip");
+                OrderInfo orderInfo = new OrderInfo(id, name, phone, type, date, time, resv, state, createDate,
+                        createTime, createIp);
+                list.add(orderInfo);
+            }
+            return list;
         } finally {
             DB.close(rs);
             DB.close(stmt);

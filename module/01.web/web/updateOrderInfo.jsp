@@ -121,6 +121,9 @@
                     <option value="1"<%=1==orderInfo.getType()?" SELECTED":""%>>工程</option>
                     <option value="2"<%=2==orderInfo.getType()?" SELECTED":""%>>私单</option>
                     <option value="3"<%=3==orderInfo.getType()?" SELECTED":""%>>代理</option>
+                    <option value="4"<%=4==orderInfo.getType()?" SELECTED":""%>>样板</option>
+                    <option value="5"<%=5==orderInfo.getType()?" SELECTED":""%>>工程招投标</option>
+                    <option value="6"<%=6==orderInfo.getType()?" SELECTED":""%>>私单招投标</option>
                 </select>
                 <br>
                 <span>订单日期</span>&nbsp;&nbsp;

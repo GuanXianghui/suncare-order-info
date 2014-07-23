@@ -18,6 +18,7 @@
         <action name="createOrderInfo" class="com.gxx.order.CreateOrderInfoAction"/>
         <action name="deleteOrderInfo" class="com.gxx.order.DeleteOrderInfoAction"/>
         <action name="updateOrderInfo" class="com.gxx.order.UpdateOrderInfoAction"/>
+        <action name="exportByMonth" class="com.gxx.order.ExportByMonthAction"/>
     </package>
 
     <!--

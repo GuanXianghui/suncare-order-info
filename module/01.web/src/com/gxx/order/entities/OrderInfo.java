@@ -169,6 +169,7 @@ public class OrderInfo {
 
     /**
      * 返回订单类型描述
+     * 类型 1:工程 2:私单 3:代理 4:样板 5:工程招投标 6:私单招投标
      * @return
      */
     public String getTypeDesc(){
@@ -180,6 +181,15 @@ public class OrderInfo {
         }
         if(OrderInfoInterface.TYPE_AGENCY == type){
             return "代理";
+        }
+        if(OrderInfoInterface.TYPE_DEMO == type){
+            return "样板";
+        }
+        if(OrderInfoInterface.TYPE_PROJECT_ZTB == type){
+            return "工程招投标";
+        }
+        if(OrderInfoInterface.TYPE_PRIVATE_ZTB == type){
+            return "私单招投标";
         }
         return StringUtils.EMPTY;
     }

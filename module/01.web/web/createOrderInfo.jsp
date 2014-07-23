@@ -91,6 +91,9 @@
                     <option value="1">工程</option>
                     <option value="2">私单</option>
                     <option value="3">代理</option>
+                    <option value="4">样板</option>
+                    <option value="5">工程招投标</option>
+                    <option value="6">私单招投标</option>
                 </select>
                 <br>
                 <span>订单日期</span>&nbsp;&nbsp;

@@ -86,3 +86,39 @@ function deleteOrderInfo(id){
         }
     });
 }
+
+/**
+ * 按月导出
+ */
+function exportByMonth(){
+    //删除用户
+    var SUCCESS_STR = "success";//成功编码
+    $.ajax({
+        type:"post",
+        async:false,
+        url:baseUrl + "exportByMonth.do",
+        data:"year=" + $("#year").val() + "&month=" + $("#month").val() + "&token=" + token,
+        success:function (data, textStatus) {
+            if ((SUCCESS_STR == textStatus) && (null != data)) {
+                data = eval("(" + data + ")");
+                //判是否成功
+                if (false == data["isSuccess"]) {
+                    showError(data["message"]);
+                } else {
+                    //成功 跳到当前
+                    showSuccess(data["message"]);
+                    window.open("download.jsp?fileRoute=" + data["fileRoute"] + "&newName=业务登记汇总" + $("#year").val() + "-" + $("#month").val() + ".xls");
+                }
+                //判是否有新token
+                if (data["hasNewToken"]) {
+                    token = data["token"];
+                }
+            } else {
+                showAttention("服务器连接异常，请稍后再试！");
+            }
+        },
+        error:function (data, textStatus) {
+            showAttention("服务器连接异常，请稍后再试！");
+        }
+    });
+}

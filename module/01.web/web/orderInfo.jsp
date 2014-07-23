@@ -120,7 +120,7 @@
             <input type="hidden" name="resv" id="orderResv" value="<%=resv%>">
             <input type="hidden" name="pageNum" id="pageNum" value="1">
         </form>
-        <form>
+        <form style="text-align: center">
             <span>用户名</span>&nbsp;&nbsp;<input class="text-input" type="text" id="name" value="<%=name%>"/>
             <span>电话号码</span>&nbsp;&nbsp;<input class="text-input" type="text" id="phone" value="<%=phone%>"/>
             <span>订单类型</span>&nbsp;&nbsp;
@@ -129,10 +129,37 @@
                 <option value="1"<%=StringUtils.equals("1", type)?" SELECTED":""%>>工程</option>
                 <option value="2"<%=StringUtils.equals("2", type)?" SELECTED":""%>>私单</option>
                 <option value="3"<%=StringUtils.equals("3", type)?" SELECTED":""%>>代理</option>
-            </select>
+                <option value="4"<%=StringUtils.equals("4", type)?" SELECTED":""%>>样板</option>
+                <option value="5"<%=StringUtils.equals("5", type)?" SELECTED":""%>>工程招投标</option>
+                <option value="6"<%=StringUtils.equals("6", type)?" SELECTED":""%>>私单招投标</option>
+            </select><br>
             <span>订单日期</span>&nbsp;&nbsp;<input class="text-input" type="text" id="date" value="<%=date%>"/>
             <span>备注信息</span>&nbsp;&nbsp;<input class="text-input" type="text" id="resv" value="<%=resv%>"/>
-            <input class="button" type="button" onclick="queryOrderInfo();" value="查询"/>
+            <input class="button" type="button" onclick="queryOrderInfo();" value="查询"/><br>
+            <select class="text-input" id="year">
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+            </select>
+            年
+            <select class="text-input" id="month">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            月
+            <input class="button" type="button" onclick="exportByMonth();" value="按月导出"/>
             <br/>
             <br/>
         </form>

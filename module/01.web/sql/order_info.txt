@@ -2,7 +2,7 @@ create table order_info( #订单信息表
 	id int auto_increment primary key comment '主键 自增',
 	name varchar(50) not null comment '客户名称 不为空',
 	phone varchar(20) not null comment '电话号码 不为空',
-	type int not null comment '类型 1工程 2私单 3代理 不为空',
+	type int not null comment '类型 1:工程 2:私单 3:代理 4:样板 5:工程招投标 6:私单招投标 不为空',
 	date varchar(8) not null comment '订单日期 不为空',
 	time varchar(6) not null comment '订单时间 不为空',
 	resv varchar(500) comment '备注 可为空',

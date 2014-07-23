@@ -276,6 +276,25 @@ public class DateUtil {
     }
 
     /**
+     * 将日期转换为长字符串，格式：yyyy-MM-dd HH:mm:ss
+     *
+     * @param date 日期
+     * @return 字符串
+     */
+    public static String getLongDateTime(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        if (date == null) {
+            return null;
+        }
+        try {
+            return sdf.format(date);
+        } catch (Exception e) {
+            logger.error("异常发生~", e);
+            return null;
+        }
+    }
+
+    /**
      * 将日期字符串转换为Date自然时间
      *
      * @param date 日期字符串
