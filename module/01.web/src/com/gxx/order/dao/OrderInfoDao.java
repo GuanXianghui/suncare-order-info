@@ -56,7 +56,7 @@ public class OrderInfoDao {
             sql += " AND resv LIKE '%" + resv + "%'";
         }
         sql += " AND state=" + OrderInfoInterface.STATE_NORMAL;
-        sql += " ORDER BY date,time LIMIT " + ((pageNum-1) * pageSize) + "," + pageSize;
+        sql += " ORDER BY date desc,time desc LIMIT " + ((pageNum-1) * pageSize) + "," + pageSize;
         Connection c = DB.getConn();
         Statement stmt = DB.createStatement(c);
         ResultSet rs = DB.executeQuery(c, stmt, sql);
